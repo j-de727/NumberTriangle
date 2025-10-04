@@ -134,7 +134,7 @@ public class NumberTriangle {
         while (line != null) {
 
             // remove when done; this line is included so running starter code prints the contents of the file
-            System.out.println(line);
+            // System.out.println(line);
 
             ArrayList<NumberTriangle> curr_line = new ArrayList<NumberTriangle>();
 
@@ -156,7 +156,11 @@ public class NumberTriangle {
                 }
                 curr_line.add(t);
             }
-            prev_line = (ArrayList<NumberTriangle>) curr_line.clone();
+
+            prev_line = new ArrayList<NumberTriangle>();
+            for (NumberTriangle tri : curr_line) {
+                prev_line.add(tri);
+            }
 
             //read the next line
             line = br.readLine();
